@@ -1,7 +1,5 @@
 package com.app.adak.data.network
 
-import com.app.adak.data.network.services.ApiService
-
 import com.google.gson.Gson
 import com.google.gson.GsonBuilder
 
@@ -9,17 +7,15 @@ import javax.inject.Singleton
 
 import dagger.Module
 import dagger.Provides
-import okhttp3.Interceptor
-import okhttp3.OkHttpClient
+
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
-import android.content.Context
 import com.app.adak.utils.AppConstant
+import okhttp3.OkHttpClient
 
 
 @Module
 internal class NetModule() {
-
 
     @Provides
     @Singleton
@@ -31,7 +27,8 @@ internal class NetModule() {
     @Provides
     @Singleton
     fun provideOkHttpClient(): OkHttpClient {
-        return OkHttpClient()
+       return OkHttpClient()
+
     }
 
     @Provides

@@ -5,10 +5,12 @@ import android.app.Dialog
 import android.content.Context
 import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
+import android.net.ConnectivityManager
 import android.util.Log
 import android.view.View
 import android.view.Window
 import android.widget.FrameLayout
+import android.widget.Toast
 import com.app.adak.R
 import retrofit2.Call
 import retrofit2.Callback
@@ -17,19 +19,26 @@ import retrofit2.Response
 
 open class MyCallBack<T>(var context: Context, showLoading: Boolean) : Callback<T> {
 
+
+
     var dialog: Dialog = Dialog(context)
 
     init {
-        Log.d("--------", "init")
-        dialog.window!!.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
-        dialog.requestWindowFeature(Window.FEATURE_NO_TITLE)
-        dialog.setContentView(R.layout.dial_loading)
-        val dialogBase = dialog.findViewById<FrameLayout>(R.id.dialogBase)
-        if (showLoading) {
-            dialog.show()
-            setVisbileGone(dialogBase, View.VISIBLE, dialog)
+        if (isNetworkConnected(context)){
+            Log.d("--------", "init")
+            dialog.window!!.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
+            dialog.requestWindowFeature(Window.FEATURE_NO_TITLE)
+            dialog.setContentView(R.layout.dial_loading)
+            val dialogBase = dialog.findViewById<FrameLayout>(R.id.dialogBase)
+            if (showLoading) {
+                dialog.show()
+                setVisbileGone(dialogBase, View.VISIBLE, dialog)
 
+            }else{
+                Toast.makeText(context,"please check your Internet Connection",Toast.LENGTH_SHORT)
+            }
         }
+
 
 
     }
@@ -183,4 +192,20 @@ open class MyCallBack<T>(var context: Context, showLoading: Boolean) : Callback<
 
     }
 
+    fun isNetworkConnected(context: Context): Boolean {
+        val cm = context.getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
+        val activeNetwork = cm.activeNetworkInfo
+        if (activeNetwork != null) {
+            // connected to the internet
+            if (activeNetwork.type == ConnectivityManager.TYPE_WIFI) {
+
+                return true
+            } else if (activeNetwork.type == ConnectivityManager.TYPE_MOBILE) {
+                return true
+            }
+        } else {
+            return false
+        }
+        return false
+    }
 }

@@ -50,6 +50,7 @@ class HomeActivity : AppCompatActivity() {
     private fun init() {
 
         setSupportActionBar(toolbar)
+        supportActionBar!!.title=""
         userItems.clear()
         getUser(1, true)
     }
@@ -69,7 +70,7 @@ class HomeActivity : AppCompatActivity() {
 
             override fun onFailure(call: Call<Users>, t: Throwable) {
                 super.onFailure(call, t)
-                logdFailure("getUser")
+                logdFailure("getUser:  "+t.message)
                 isLoading = false
             }
 

@@ -68,6 +68,9 @@ dependencies {
     kapt 'com.google.dagger:dagger-android-processor:2.16'
     kapt 'com.google.dagger:dagger-compiler:2.16'
 
+    implementation 'com.squareup.okhttp3:okhttp:3.12.2'
+    implementation "com.squareup.okhttp3:logging-interceptor:3.12.2"
+
     //Test
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test.ext:junit:1.1.1'
