@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">adak</string>
+
+    <string name="Bold">IRANSans(FaNum)_Bold</string>
+    <string name="Medium">IRANSans(FaNum)_Medium</string>
+    <string name="Light">IRANSans(FaNum)_Light</string>
 </resources>
