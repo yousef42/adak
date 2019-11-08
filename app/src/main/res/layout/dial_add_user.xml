@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="10dp"
+    android:layout_marginRight="10dp"
+    android:background="@drawable/bottom_radius_white"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:paddingBottom="10dp">
+
+    <com.app.adak.ui.customWidget.TextViewAdak
+        android:id="@+id/txtTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:gravity="center"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp"
+        android:text="Add new user"
+        android:textColor="@color/black_appDark"
+        android:textSize="16dp"
+        app:fontName="Medium" />
+
+    <com.app.adak.ui.customWidget.EditTextAdak
+        android:id="@+id/etFullName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:background="@drawable/border_red_bottom_side"
+        android:ems="10"
+        android:gravity="center"
+        android:hint="Name"
+        android:inputType="textPersonName"
+        android:maxEms="12"
+        android:maxLines="1"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp"
+        android:textColor="@color/black_appDark"
+        android:textSize="14dp"
+        app:fontName="Medium" />
+
+    <com.app.adak.ui.customWidget.EditTextAdak
+        android:id="@+id/etJob"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:layout_marginBottom="20dp"
+        android:background="@drawable/border_red_bottom_side"
+        android:ems="10"
+        android:gravity="center"
+        android:hint="Job"
+        android:inputType="textPersonName"
+        android:maxEms="12"
+        android:maxLines="1"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp"
+        android:textColor="@color/black_appDark"
+        android:textSize="14dp"
+        app:fontName="Medium" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.app.adak.ui.customWidget.TextViewAdak
+            android:id="@+id/btnClose"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="15dp"
+            android:ems="4"
+            android:gravity="center"
+            android:text="close"
+            android:textColor="@color/gray_appLight"
+            android:textSize="16dp"
+            app:fontName="Medium" />
+
+        <com.app.adak.ui.customWidget.TextViewAdak
+            android:id="@+id/btnConfirm"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_marginTop="15dp"
+
+            android:ems="4"
+            android:gravity="center"
+            android:text="confirm"
+            android:textColor="@color/black_appDark"
+            android:textSize="16dp"
+            app:fontName="Medium" />
+
+    </RelativeLayout>
+
+
+</LinearLayout>

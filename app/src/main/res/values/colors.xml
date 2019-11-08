@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#008577</color>
+    <color name="colorPrimaryDark">#00574B</color>
+    <color name="colorAccent">#D81B60</color>
+
+    <color name="white">#fff</color>
+    <color name="white_trans">#FF90</color>
+    <color name="black_app">#4B6584</color>
+    <color name="black_appDark">#34495E</color>
+    <color name="gray_app">#BDC3C7</color>
+    <color name="gray_appLight">#778CA3</color>
+    <color name="registar_btn">#3849b4</color>
+    <color name="black">#000</color>
+    <color name="blueDrak">#3700b3</color>
+    <color name="blue">#6200ee</color>
+    <color name="blue1">#003680</color>
+    <color name="blue2">#023273</color>
+    <color name="orange">#df8429</color>
+    <color name="red">#FE5778</color>
+    <color name="gray90">#e6e6e6</color>
+    <color name="gray95">#dedede</color>
+    <color name="gray84">#d5d5d5</color>
+    <color name="gray74">#bdbdbd</color>
+    <color name="gray80">#cccccc</color>
+    <color name="gray">#fedc81</color>
+    <color name="green">#1DD1A1</color>
+    <color name="lightblue">#7f9abf</color>
+    <color name="nothing">#00000000</color>
+    <color name="mdtp_accent_color">#003680</color>
+    <color name="mdtp_accent_color_dark">#012c67</color>
+    <color name="transparent">#00000000</color>
+    <color name="gray_transparent">#a2000000</color>
+</resources>
