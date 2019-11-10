@@ -16,7 +16,7 @@ fun Activity.loadImageProPlaceHolder(url: String?, imgView: CircleImageView) {
     if (url.isNullOrEmpty()) {
         imgView.setImageResource(R.drawable.ic_user_placeholder)
     } else {
-        Picasso.with(this).load(url).placeholder(R.drawable.ic_user_placeholder).into(imgView)
+        Picasso.with(this).load(url).placeholder(R.drawable.temp).into(imgView)
     }
 
 
@@ -46,15 +46,3 @@ fun Activity.loadImageProPlaceHolder(url: String?, imgView: CircleImageView) {
 //
 //
 //
-//fun EditProfile.CustomerOldData.toCustomerProfile() = CustomerProfile(
-//        FullName = fullName,
-//        IsMen = isMen ?: false,
-//        Image = image,
-//        Mobile = mobile,
-//        cityId = cityId,
-//        AreaId = areaId,
-//        Email = email,
-//        PrivateKey = privateKey(),
-//        Age = ""
-//
-//)

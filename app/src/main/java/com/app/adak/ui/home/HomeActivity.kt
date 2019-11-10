@@ -18,11 +18,13 @@ import kotlinx.android.synthetic.main.activity_home.*
 
 import retrofit2.Response
 import android.widget.AbsListView
+import androidx.appcompat.app.AppCompatDelegate
 import com.app.adak.App
 import com.app.adak.data.network.model.UserCreateRes
 import com.app.adak.ui.customWidget.EditTextAdak
 import com.app.adak.ui.customWidget.TextViewAdak
 import com.app.adak.utils.*
+import com.google.android.gms.security.ProviderInstaller
 import okhttp3.ResponseBody
 
 
@@ -42,15 +44,15 @@ class HomeActivity : AppCompatActivity() {
         App.getApp().AppComponent().inject(this)
         apiService = retrofit.create(ApiService::class.java)
 
-
         init()
     }
+
 
 
     private fun init() {
 
         setSupportActionBar(toolbar)
-        supportActionBar!!.title=""
+        supportActionBar!!.title = ""
         userItems.clear()
         getUser(1, true)
     }
@@ -70,7 +72,7 @@ class HomeActivity : AppCompatActivity() {
 
             override fun onFailure(call: Call<Users>, t: Throwable) {
                 super.onFailure(call, t)
-                logdFailure("getUser:  "+t.message)
+                logdFailure("getUser:  " + t.message)
                 isLoading = false
             }
 
@@ -128,7 +130,6 @@ class HomeActivity : AppCompatActivity() {
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
 
         if (item.itemId == R.id.addUser) {
-
             addNewUser(-1)
             return true
         }
@@ -157,14 +158,14 @@ class HomeActivity : AppCompatActivity() {
         var user = UserCreateRes("", "", "", "")
 
         if (pos >= 0) {
-            txtTitle.text="Edit user"
+            txtTitle.text = "Edit user"
             var model = userItems[pos]
             user.id = model.id.toString()
             user.name = model.firstName + " " + model.lastName
             etFullName.setText(user.name)
 
         } else {
-            txtTitle.text="Add new user"
+            txtTitle.text = "Add new user"
         }
 
 
@@ -175,6 +176,7 @@ class HomeActivity : AppCompatActivity() {
             var name = etFullName.text.toString()
             var job = etJob.text.toString()
             if (name.length > 1 && job.length > 1) {
+                dialog.dismiss()
                 if (pos > 0) {
                     user.name = name
                     user.job = job
@@ -183,7 +185,7 @@ class HomeActivity : AppCompatActivity() {
                     user.name = name
                     user.job = job
                     addNewUser(user)
-                    dialog.dismiss()
+
                 }
 
             } else {

@@ -12,6 +12,9 @@ import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import com.app.adak.utils.AppConstant
 import okhttp3.OkHttpClient
+import java.security.cert.X509Certificate
+import javax.net.ssl.*
+import javax.security.cert.CertificateException
 
 
 @Module
@@ -27,7 +30,8 @@ internal class NetModule() {
     @Provides
     @Singleton
     fun provideOkHttpClient(): OkHttpClient {
-       return OkHttpClient()
+
+        return OkHttpClient()
 
     }
 
@@ -40,5 +44,8 @@ internal class NetModule() {
             .client(okHttpClient)
             .build()
     }
+
+
+
 
 }

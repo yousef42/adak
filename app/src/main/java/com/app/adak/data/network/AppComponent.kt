@@ -13,6 +13,6 @@ import javax.inject.Singleton
 interface AppComponent {
     fun inject(activity: HomeActivity)
     fun getRetrofit(): Retrofit
-    fun getOkHttpClient(): OkHttpClient
+    //fun getOkHttpClient(): OkHttpClient
 
 }
